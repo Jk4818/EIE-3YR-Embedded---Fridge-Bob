@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fridge-Bob Product</title>
+
+    <link rel="stylesheet" href="/css/market_style.css" />
+
+
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+
+
+
+</head>
+<body>
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo">Fridge-Bob</a>
+            </div>
+            
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <div class="nav__close" id="nav-close">
+                    <i class='bx bx-x'></i>
+                </div>
+
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="product.html" class="nav__link">Product</a></li>
+                    <li class="nav__item"><a href="faq.html" class="nav__link">FAQ</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <!--===== HOME =====-->
+        <div class="hero">
+            <img src="../img/Product.png" alt="fridge-bob">
+        </div>
+
+        <section class="home" id="home">
+            <div class="home__container bd-grid">
+
+                <div class="home__data">
+                    <h1 class="home__title" style="font-size: var(--h2-font-size); margin-top: -35vh; ">The Product</h1>
+                    <p class="home__description">
+                        Fridge-Bob is a wonderful little device placed in one corner of your fridge
+                        <br> which takes continuous real-time readings of the temperature, humidity,
+                        <br> and air quality of the inside of your fridge. <br>
+                        <br>You can see all the readings and also assess the condition of the fridge from the 
+                        <br>errors/warnings listed on the Message Board so you know when to repair your Fridge.
+                    </p>
+                    <div class="chart-container">
+                      <canvas id="waste-chart"></canvas>
+                    </div>
+                    <div class="stats-container">
+                        <p class="stats_description">
+                            *There is a growing trend to be more concious of food waste in the UK
+                            <br> However this minor reduction in waste over the years still isn't enough to meet the UN targets of halving global food wastage by 2030.
+                            <br> 70% of the food wasted by UK households in 2018 was food that could've been eaten. 
+                            <br> This amounts to 4.5 million tonnes, worth £700 for an average family over a single year. 
+                            <br>
+                            <br> Therefore now more than ever Fridge-Bob is necessary to reach the UN goals
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main class="l-main"></main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+    <script src="./js/animations.js"></script>
+
+
+    <script>    
+
+
+    
+    var ctx = document.getElementById('waste-chart').getContext('2d');
+    
+    var gradientStroke = ctx.createLinearGradient(1000, 0, 100, 0);
+    gradientStroke.addColorStop(0, 'rgba(199,51,166,0.8)');
+    gradientStroke.addColorStop(1, 'rgba(253,170,47,0.8)');
+
+    var gradientStroke2 = ctx.createLinearGradient(1000, 0, 100, 0);
+    gradientStroke2.addColorStop(0, 'rgba(199,51,166,0.8)');
+    gradientStroke2.addColorStop(1, 'rgba(82,183,223,0.8)');
+
+    var wasteChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["2007", "2015", "2018"],
+            datasets: [{
+                backgroundColor: gradientStroke,
+                borderColor: '#ffffff',
+                data: [11.2, 10, 9.5],
+                
+            }]
+        },
+        options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        title: {
+            display: true,
+            text: 'Household Food Waste in the UK*',
+            fontColor: 'white'
+        },
+        legend: {
+            display: false,
+        },
+        scales: {
+            yAxes: [{
+            ticks: {
+                beginAtZero: false,
+                fontSize: 10,
+                fontColor: 'white'
+
+            },
+            scaleLabel: {
+                display: true,
+                labelString: 'Millions of tonnes',
+                fontColor: 'white'
+            }
+            }],
+            xAxes: [{
+            ticks: {
+                fontColor: 'white'
+            },
+            scaleLabel: {
+                display: true,
+                labelString: 'Year',
+                fontColor: 'white'
+            }
+            }]
+        }
+        }
+    });
+
+    </script>
+
+    
+
+
+    
+</body>
+</html>

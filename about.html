@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fridge-Bob About</title>
+
+    <link rel="stylesheet" href="css/market_style.css" />
+
+
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+
+
+
+</head>
+<body>
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#" class="nav__logo">Fridge-Bob</a>
+            </div>
+            
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <div class="nav__close" id="nav-close">
+                    <i class='bx bx-x'></i>
+                </div>
+
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link active">Home</a></li>
+                    <li class="nav__item"><a href="product.html" class="nav__link">Product</a></li>
+                    <li class="nav__item"><a href="faq.html" class="nav__link">FAQ</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">About Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <!--===== HOME =====-->
+
+        <section class="home" id="home">
+            <div class="home__container bd-grid">
+
+                <div class="home__data">
+                    <h1 class="home__title" style="font-size: var(--h2-font-size); margin-top: -35vh; ">About Us</h1>
+                    <p class="home__description">
+                        We are a student led start-up on a mission to combat the biggest crisis of our lifetimes: climate change.
+                        <br>
+                        <br>We developed Fridge-Bob to combat food wastage and help households move towards sustainability by throwing away less food.
+                        <br>
+                        <br>Our mission is to grow Fridge Bob into a device in every fridge that can help reduce food wastage by keeping your fridge in optimal condition. 
+                        <br>We also aim to keep you, our customers, happy with a product that helps you save money by throwing away less food and 
+                        <br>making you aware and proud of the difference you and Fridge Bob are making in the world! 
+                        <br>  <br>
+                        <br> 
+                        <br>
+                    </p>
+                    
+                </div>
+                <div class="intro">
+                    <p style="color: var(--white-color);">The people behind the scenes.</p>
+                </div>
+                <div class="cards-container">
+                    <div class="card">
+                        <a href="https://github.com/adityag16/Embedded-Systems-IoT"> 
+                            <img src="../img/Tejas.png" alt="Avatar" class="avatar" style="width: 30%;">
+                        </a>
+                        <h3>Tejas Dandawate</h3>
+                        <p>Imperial College London Student</p>
+                        <br>
+                        <p>Back-end Engineer</p>
+                        <br>
+                    </div>
+                    <div class="card">
+                        <a href="https://github.com/adityag16/Embedded-Systems-IoT"> 
+                            <img src="../img/Aditya.png" alt="Avatar" class="avatar" style="width: 30%;">
+                        </a>
+                        <h3>Aditya Gupta</h3>
+                        <p>Imperial College London Student</p>
+                        <br>
+                        <p>Back-end Engineer</p>
+                        <br>
+                    </div>
+                    <div class="card">
+                        <a href="https://github.com/adityag16/Embedded-Systems-IoT"> 
+                            <img src="../img/Jason.png" alt="Avatar" class="avatar" style="width: 30%;">
+                        </a>
+                        <h3>Jason Keung</h3>
+                        <p>Imperial College London Student</p>
+                        <br>
+                        <p>Front-end Engineer and Marketing specialist</p>
+                    </div>
+                    <div class="card">
+                        <a href="https://github.com/adityag16/Embedded-Systems-IoT"> 
+                            <img src="../img/Hussain.png" alt="Avatar" class="avatar" style="width: 30%;">
+                        </a>
+                        <h3>Hussain Kurabadwala</h3>
+                        <p>Imperial College London Student</p>
+                        <br>
+                        <p>Hardware Engineer and Marketing specialist</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main class="l-main"></main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+    <script src="../static/animations.js"></script>
+
+
+    <script>    
+    var ctx = document.getElementById('waste-chart').getContext('2d');
+    var wasteChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+            }]
+        }
+        }
+    });
+    </script>
+
+    
+</body>
+</html>
